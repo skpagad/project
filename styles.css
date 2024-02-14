@@ -1,0 +1,798 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
+/* for mobile first approach*/
+
+body {
+  font-family: "Comic Neue", cursive;
+  background-image: url("/assets/images/b2.png");
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+header {
+  /* color: rgb(148, 10, 10); */
+  text-align: left;
+  padding: 1rem;
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.2px);
+  -webkit-backdrop-filter: blur(6.2px);
+  border: 1px solid rgba(255, 255, 255, 0.92);
+}
+
+main {
+  padding: 1rem;
+  margin: 1rem;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.2px);
+  -webkit-backdrop-filter: blur(6.2px);
+  border: 1px solid rgba(255, 255, 255, 0.92);
+}
+
+.intro {
+  text-align: center;
+  font-size: 1em; /* Responsive font size */
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: block; /* Stack items vertically for mobile */
+}
+
+nav li {
+  display: block; /* Full-width list items for mobile */
+  margin-bottom: 5px; /* Spacing between menu items */
+  border: 1px solid;
+  border-radius: 5px;
+  background-color: #11a82f00;
+}
+
+nav li a {
+  display: block;
+  color: rgb(103, 108, 104);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  text-decoration: none;
+  color: rgb(38, 116, 133);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+header a {
+  text-decoration: none;
+  color: darkcyan;
+}
+
+header ul {
+  list-style-type: none;
+  /* margin: 0; */
+  padding: 10px;
+  display: block; /* Stack items vertically for mobile */
+  display: flex;
+}
+
+header li {
+  display: block; /* Full-width list items for mobile */
+  justify-content: space-between;
+  margin-right: 5px; /* Spacing between menu items */
+  padding: 10px;
+}
+
+header li a:hover {
+  text-decoration: none;
+  color: rgb(20, 53, 60);
+}
+
+header a:hover {
+  text-decoration: none;
+  color: rgb(20, 53, 60);
+}
+
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  margin-top: 10px;
+  width: 100%;
+  color: white;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent footer */
+  font-size: 0.8em; /* Smaller font size for mobile */
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger-menu {
+      display: block;
+      cursor: pointer;
+  }
+
+  #navList {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+  }
+
+  header {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+}
+
+/* Media Query for larger screens (e.g., tablets, desktops) */
+@media (min-width: 768px) {
+  main {
+    max-width: 800px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+  }
+
+  .form-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  .form-group label,
+  .form-group input[type="number"] {
+    width: 48%;
+  }
+
+  button {
+    width: 50%;
+    align-self: center;
+  }
+
+  /* Media Query for PC screens */
+  @media (min-width: 1024px) {
+    /* Display navigation horizontally */
+    nav ul {
+      display: flex;
+      justify-content: center; /* Align navigation items to the center */
+      padding: 0;
+    }
+
+    nav li {
+      display: inline-block; /* Display list items inline */
+      margin: 0 10px; /* Add horizontal space between navigation items */
+      border: none;
+    }
+
+    nav li a {
+      padding: 10px 15px; /* Increase padding for clickable area */
+      color: #333; /* Darker text for better readability */
+    }
+
+    /* Adjust main content area */
+    main {
+      margin: 2rem auto; /* Increase margin around the main content */
+      max-width: 960px; /* Set a max-width for the main content area */
+      padding: 2rem; /* Increase padding */
+    }
+
+    /* Scale up headings and text */
+    header,
+    section h2,
+    p {
+      font-size: 1.25em; /* Increase font size */
+    }
+
+    /* Adjust form elements for desktop */
+    .form-group {
+      max-width: 500px; /* Set a max-width for form groups */
+      margin: auto; /* Center form groups */
+    }
+
+    .form-group label,
+    .form-group input[type="number"],
+    .form-group select {
+      font-size: 1em; /* Increase font size for better readability */
+    }
+
+    button {
+      padding: 10px 20px; /* Increase padding */
+      font-size: 1em; /* Increase font size */
+    }
+
+    /* Footer should not be fixed at the bottom on larger screens */
+    footer {
+      position: relative; /* Change position to relative */
+      bottom: auto;
+      width: auto;
+      color: #333;
+    }
+  }
+}
+
+/*a. Must use at least 10 descendent selectors.
+
+/* 1. Styling headers within each section */
+section h2 {
+  color: #0056b3;
+  margin-bottom: 15px;
+}
+
+/* 2. Styling input fields inside the form-group class */
+.form-group input[type="number"] {
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 10px;
+  width: 100%;
+}
+
+/* 3. Styling labels in the rocket-input section */
+.rocket-input label {
+  color: #495057;
+  font-size: 14px;
+}
+
+/* 4. Styling the select elements in the rocket-selection and planet-selection sections */
+.rocket-selection select,
+.planet-selection select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+}
+
+/* 5. Styling buttons within the main element */
+main button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* 6. Styling the result section */
+#rocket-result {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+}
+
+/* 7. Styling paragraphs inside the footer */
+footer p {
+  color: #fff;
+  font-size: 14px;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+/* 8. Hover effect on buttons in the main section */
+main button:hover {
+  background-color: #1c5027;
+}
+
+/* 9. Focus effect on input fields in form groups */
+.form-group input[type="number"]:focus {
+  border-color: #80bdff;
+  outline: none;
+}
+
+/* 10. Styling the select elements when they are focused */
+.rocket-selection select:focus,
+.planet-selection select:focus {
+  border-color: #80bdff;
+  outline: none;
+}
+
+/*b. Must use at least 10 unique adjacent selectors.
+/* 1. Styling label immediately followed by an input */
+label + input[type="number"] {
+  margin-top: 5px;
+}
+
+/* 2. Styling a button after a section */
+section + button {
+  margin-top: 20px;
+  width: 50%;
+  align-self: center;
+}
+
+/* 3. Styling a select element that follows an h2 element */
+h2 + select {
+  margin-top: 10px;
+  background-color: #e9ecef;
+}
+
+/* 4. Styling an input field that follows another input field */
+input[type="number"] + input[type="number"] {
+  margin-top: 15px;
+}
+
+/* 5. Styling a section that directly follows another section */
+section + section {
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px solid #dee2e6;
+}
+
+/* 6. Styling the first div.form-group after the h2 in rocket-input section */
+.rocket-input h2 + div.form-group {
+  border: 1px solid #007bff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* 7. Styling a select element immediately following a div */
+div + select {
+  background-color: #f2f2f2;
+  border: 1px solid #ced4da;
+}
+
+/* 8. Styling the h2 element following the rocket-result section */
+#rocket-result + h2 {
+  color: #17a2b8;
+  text-decoration: underline;
+}
+
+/* 9. Styling a section following the main tag */
+main + section {
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+/* 10. Styling a footer following a main tag */
+main + footer {
+  padding-top: 20px;
+  background-color: #343a40;
+  color: white;
+}
+
+/*c. Must have 2+ different class selectors.
+
+/* 1. Styling elements with the 'highlight' class */
+.highlight {
+  background-color: #ffeb3b;
+  color: #212529;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+/* 2. Styling elements with the 'important-text' class */
+.important-text {
+  font-weight: bold;
+  color: #d9534f;
+}
+
+/* 3. Styling input fields with the 'input-highlight' class */
+.input-highlight {
+  background-color: #e9ecef;
+  border: 2px solid #007bff;
+}
+
+/* 4. Styling buttons with the 'btn-secondary' class */
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* 5. Styling sections with the 'section-border' class */
+.section-border {
+  border: 1px solid #dee2e6;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+/* d. Must have at least 2 ID selectors.
+
+/* 1. Styling the element with the 'rocket-form' ID */
+#rocket-form {
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 2. Styling the element with the 'rocket-result' ID */
+#rocket-result {
+  font-size: 18px;
+  color: #28a745;
+  border: 1px solid #28a745;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+  background-color: #f0f0f0;
+}
+
+/*e. Must have 5 or more pseudo element selectors.
+
+/* 1. Styling the first letter of each h2 element */
+h2::first-letter {
+  color: #007bff;
+  font-size: 200%;
+  font-weight: bold;
+}
+
+/* 2. Styling the first line of paragraphs within the form group */
+.form-group p::first-line {
+  font-weight: bold;
+  color: #495057;
+}
+
+/* 3. Adding content before the rocket-form ID element */
+#rocket-form::before {
+  content: "Rocket Details";
+  display: block;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+/* 4. Styling the selection color in input fields */
+input[type="number"]::selection {
+  background: #007bff;
+  color: white;
+}
+
+/* 5. Adding a decorative underline after h2 elements */
+h2::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 2px;
+  background-color: #007bff;
+  margin: 10px auto;
+}
+
+/* 6. Styling the first letter of each label */
+label::first-letter {
+  color: #28a745;
+  font-size: 110%;
+}
+
+/*f. Must have 5 or more pseudo class selectors
+
+/* 1. Changing the style of an input when it is in focus */
+input[type="number"]:focus {
+  border: 2px solid #007bff;
+  outline: none;
+  background-color: #eef4ff;
+}
+
+/* 2. Hover effect on buttons */
+button:hover {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+/* 3. Styling links when they are hovered over */
+a:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+/* 4. Styling the first child of type section */
+section:first-of-type {
+  /* background-color: #e9ecef; */
+  /* padding: 15px; */
+  border-radius: 5px;
+}
+
+/* 5. Styling options in select when they are being hovered */
+select option:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* 6. Styling the last child of type input within form groups */
+.form-group input[type="number"]:last-child {
+  margin-bottom: 20px;
+}
+
+/* 7. Changing the appearance of a button when it is disabled */
+button:disabled {
+  background-color: #6c757d;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+/* Planets page - tabs section */
+
+.pdid__btn {
+  margin: auto;
+  text-align: center;
+}
+
+.pdid__desc__container {
+  margin: 30px;
+}
+
+.pdid__desc {
+  margin: 25px 200px;
+  padding: 25px 50px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.2px);
+  -webkit-backdrop-filter: blur(6.2px);
+  border: 1px solid rgba(255, 255, 255, 0.92);
+}
+
+.pdid__img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+/* ================ RESPONSIVE ================= */
+
+@media screen and (max-width: 768px) {
+  .pdid__desc {
+    padding: 10px;
+    margin: 0;
+  }
+}
+
+/* ============ IPHONE SE ============== */
+@media screen and (min-width: 375px), (min-width: 360px) {
+  /* .pdid__btn{
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+      } */
+
+  .pdid__btn a {
+    width: 160px;
+    font-size: 15px;
+  }
+
+  .pdid__desc__container {
+    margin: 5px;
+  }
+}
+
+.tabset > input[type="radio"] {
+  position: absolute;
+  left: -200vw;
+}
+
+.tabset .tab-panel {
+  display: none;
+}
+
+.tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
+.tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
+.tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
+.tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
+.tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
+.tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6),
+.tabset > input:nth-child(13):checked ~ .tab-panels > .tab-panel:nth-child(7),
+.tabset > input:nth-child(15):checked ~ .tab-panels > .tab-panel:nth-child(8),
+.tabset > input:nth-child(17):checked ~ .tab-panels > .tab-panel:nth-child(9) {
+  display: block;
+}
+
+.tabset > label {
+  position: relative;
+  display: inline-block;
+  padding: 15px 15px 25px;
+  border: 1px solid transparent;
+  border-bottom: 0;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.tabset > label::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  bottom: 10px;
+  width: 22px;
+  height: 4px;
+}
+
+input:focus-visible + label {
+  outline: 2px solid #000;
+  border-radius: 3px;
+}
+
+.tabset > label:hover,
+.tabset > input:focus + label,
+.tabset > input:checked + label {
+  transform: scale(1);
+}
+
+.tabset > label:hover::after,
+.tabset > input:focus + label::after,
+.tabset > input:checked + label::after {
+  transform: scale(1);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.tabset > input:checked + label {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.2px);
+  -webkit-backdrop-filter: blur(6.2px);
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  z-index: 1;
+}
+
+.tab-panel {
+  padding: 30px 0;
+  border-top: 1px solid #ccc;
+}
+
+.tabset {
+  max-width: 65em;
+}
+
+.slider {
+  width: 70%;
+  max-width: 800px;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+}
+
+.slide {
+  width: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
+
+.slide.active {
+  display: block;
+}
+
+@keyframes slideAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.slider1 {
+  width: 70%;
+  max-width: 800px;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+}
+
+.slide1 {
+  width: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide1 img {
+  width: 100%;
+  height: auto;
+}
+
+.slide1.active {
+  display: block;
+}
+
+table {
+  /* border-collapse: collapse; */
+  width: 100%;
+}
+
+table,
+th,
+td {
+  border: 1px solid;
+  text-align: left;
+  padding: 8px;
+  text-align: center;
+}
+
+.tabset p {
+  font-size: 18px;
+}
+
+
+/*login page */
+
+
+
+
+#navList li a {
+  text-decoration: none;
+  color: #d77645; /* Adjust as needed */
+  font-size: 1rem;
+}
+
+/* Style for the hamburger menu */
+.hamburger-menu {
+  display: none; /* Hide on desktop and show on mobile if needed */
+}
+
+/* Styles for the form container and elements */
+.container {
+  width: 300px; /* Adjust as needed */
+  margin: 0 auto;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.8); /* Or another color based on the design */
+  padding: 2rem;
+  border-radius: 10px; /* Adjust as needed */
+}
+
+.container h2 {
+  margin-bottom: 1rem;
+  color: #333; /* Adjust as needed */
+}
+
+.container input[type="text"],
+.container input[type="password"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #a3d039; /* Adjust as needed */
+  border-radius: 5px; /* Adjust as needed */
+}
+
+.container button {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  background-color: #168dce; /* Adjust as needed */
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Adjust this media query as needed for responsive design */
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: block;
+  }
+  
+  #navList {
+    display: none;
+  }
+  
+  /* Other responsive styles as needed */
+}
